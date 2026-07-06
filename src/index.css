@@ -1,5 +1,19 @@
+:root {
+  --background-color: #FFFFFF;
+  --text-color: #0F141E;
+  --default-padding: 50px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
 * {
   font-family: "Geist", sans-serif;
   font-weight: normal;
   font-style: normal;
+  box-sizing: border-box;
 }

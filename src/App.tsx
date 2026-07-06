@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 
-import Projects from "./containers/projects";
-import AboutMe from "./containers/aboutMe";
-import Contact from "./containers/contact";
+import Projects from "./containers/Projects";
+import AboutMe from "./containers/AboutMe";
+import Contact from "./containers/Contact";
 import AssessmentAndQuote from "./containers/AssessmentAndQuote";
 
 export default function App() {

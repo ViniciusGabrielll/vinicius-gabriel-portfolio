@@ -1,0 +1,13 @@
+.menu {
+    width: 25vw;
+    height: 100vh;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: var(--default-padding);
+    position: fixed;
+}
+
+.wordmark {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
