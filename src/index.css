@@ -1,14 +1,17 @@
 :root {
   --background-color: #FFFFFF;
-  --text-color: #0F141E;
+  --primary-color: #008CFF;
+  --primary-text-color: #0F141E;
   --default-padding: 50px;
+  --secondary-text-color: #B7B8BB;
 }
 
 body {
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--primary-text-color);
   margin: 0;
   padding: 0;
+  margin-left: 25vw;
 }
 
 * {
@@ -16,4 +19,9 @@ body {
   font-weight: normal;
   font-style: normal;
   box-sizing: border-box;
+  color: var(--primary-text-color);
+}
+
+a {
+  text-decoration: none;
 }

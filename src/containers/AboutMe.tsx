@@ -1,9 +1,14 @@
+import styles from "./AboutMe.module.css";
+
 function AboutMe() {
 
   return (
     <>
-      <h1>About Me</h1>
+      <div className={styles.container}>
+        <h1>Em Construção</h1>
+        <p>Ultima atualização foi em 13/07/2026</p>
 
+      </div>
     </>
   )
 }

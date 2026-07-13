@@ -1,9 +1,14 @@
+import styles from "./AssessmentAndQuote.module.css";
+
 function AssessmentAndQuote() {
 
   return (
     <>
-      <h1>Assessment and Quote</h1>
+      <div className={styles.container}>
+        <h1>Em Construção</h1>
+        <p>Ultima atualização foi em 13/07/2026</p>
 
+      </div>
     </>
   )
 }
