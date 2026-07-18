@@ -1,4 +1,4 @@
-import styles from "./menu.module.css";
+import styles from "./Menu.module.css";
 
 import wordmark from "./../../public/wordmark.svg";
 import { data } from "../data/data";

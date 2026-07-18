@@ -6,7 +6,7 @@ function AboutMe() {
     <>
       <div className={styles.container}>
         <h1>Em Construção</h1>
-        <p>Ultima atualização foi em 13/07/2026</p>
+        <p>Ultima atualização foi em 17/07/2026</p>
 
       </div>
     </>

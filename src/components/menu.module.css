@@ -68,7 +68,7 @@
 
 .menuContact:hover {
     width: 150px;
-    background-color: var(--primary-text-color);
+    background-color: var(--primary-color);
 }
 
 .menuContact:hover span {

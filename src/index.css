@@ -1,9 +1,19 @@
 :root {
-  --background-color: #FFFFFF;
-  --primary-color: #008CFF;
-  --primary-text-color: #0F141E;
+  --background-color: #FFFDF9;
+  --primary-color: #3F6B4B;
+  --secondary-color: #8B5E3C;
+  --primary-text-color: #141211;
   --default-padding: 50px;
-  --secondary-text-color: #B7B8BB;
+  --secondary-text-color: #8F8887;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,8 +30,36 @@ body {
   font-style: normal;
   box-sizing: border-box;
   color: var(--primary-text-color);
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 20px;
+  color: var(--secondary-text-color);
 }
 
 a {
   text-decoration: none;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-text-color);
 }

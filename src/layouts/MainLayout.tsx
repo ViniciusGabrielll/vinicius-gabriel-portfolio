@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Menu from "../components/menu";
+import Menu from "../components/Menu";
 
 export default function MainLayout() {
   return (
     <div style={{ display: "flex" }}>
       <Menu />
 
-      <main style={{ flex: 1 }}>
+      <main>
         <Outlet />
       </main>
     </div>
