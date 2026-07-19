@@ -142,10 +142,6 @@
         transition: 0s .3s;
     }
 
-    .menuPhoneOpen {
-        background: none;
-    }
-
     .wordmarkPhone {
         width: 50vw;
     }
@@ -183,7 +179,7 @@
     .menu {
 
         width: 100%;
-        transform: translateY(100%);
+        transform: translateY(120%);
         z-index: 999;
         background-color: var(--primary-color);
         transition: .5s ease-in-out;

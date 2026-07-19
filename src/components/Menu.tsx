@@ -14,8 +14,7 @@ function Menu() {
 
     return (
         <>
-            <div className={`${styles.menuPhone} ${open ? styles.menuPhoneOpen : ""
-                }`}>
+            <div className={styles.menuPhone}>
                 <img src={wordmark} alt="wordmark" className={styles.wordmarkPhone} />
                 <button
                     className={styles.hamburger}
