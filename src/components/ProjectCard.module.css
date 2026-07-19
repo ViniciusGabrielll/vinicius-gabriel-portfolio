@@ -6,15 +6,20 @@
 }
 
 .cardImg {
+    position: relative;
+    overflow: hidden;
+
     width: 100%;
     height: 100%;
 
-    background-size: auto auto;
-    background-position: center center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+
     padding: 30px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cardImg::before {
@@ -70,5 +75,11 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 70vh;
     }
 }

@@ -72,11 +72,102 @@
     opacity: 0.6;
     display: flex;
     align-items: center;
-    margin-top: var(--default-padding);
+    margin-top: 100px;
     gap: 20px;
 }
 
-.copywriting div{
+.copywriting img {
+    height: 50px;
+}
+
+.copywriting div {
     display: flex;
     flex-direction: column;
+}
+
+.copywriting div span {
+    font-size: 12px;
+}
+
+@media (min-width: 769px) and (max-width: 1150px) {
+
+    .container {
+        margin-top: 140px;
+    }
+
+    .footerCTA h4 {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .footerCTA h1 {
+        text-align: center;
+    }
+
+    .footerContent {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .footerCard {
+        gap: 20px;
+    }
+
+    .coffeeContainer {
+        height: 40vh;
+    }
+
+    .copywriting {
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .footerCTA h4 {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .footerCTA h1 {
+        text-align: center;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .footerCard {
+        align-items: center;
+        gap: 16px;
+    }
+
+    .skills {
+        align-items: center;
+    }
+
+    .coffeeContainer {
+        height: 35vh;
+        padding: 24px;
+    }
+
+    .copywriting {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        margin-top: 60px;
+    }
+
+    .copywriting img {
+        height: 40px;
+    }
+
 }

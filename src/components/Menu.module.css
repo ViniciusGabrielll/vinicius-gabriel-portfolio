@@ -1,14 +1,16 @@
 .menu {
     width: 25vw;
-    height: 100vh;
+    height: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: var(--default-padding);
+    background-color: var(--background-color);
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 999;
 }
 
 .wordmark {
@@ -75,4 +77,155 @@
     visibility: visible;
     opacity: 1;
     transition-delay: .2s;
+}
+
+.hamburger {
+    display: none;
+}
+
+.overlay {
+    display: none;
+}
+
+.menuPhone {
+    display: none;
+}
+
+@media (min-width: 769px) and (max-width: 1150px) {
+    .menu {
+        width: 100%;
+        height: 120px;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .nav a {
+        width: auto;
+        padding-left: 0px;
+        border-left: none;
+        border-bottom: var(--background-color) 3px solid;
+        font-size: 20px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        border-left: none;
+        border-bottom: var(--primary-color) 3px solid;
+    }
+
+    .menuContact {
+        display: none;
+    }
+
+}
+
+@media(max-width:768px) {
+    .menuPhone {
+        width: 100%;
+        height: 100px;
+
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        padding: var(--default-padding);
+        justify-content: space-between;
+        align-items: center;
+        background-color: color-mix(in srgb, var(--background-color) 90%, transparent);
+        transition: 0s .3s;
+    }
+
+    .menuPhoneOpen {
+        background: none;
+    }
+
+    .wordmarkPhone {
+        width: 50vw;
+    }
+
+    .phoneOptions {
+        display: flex;
+        justify-content: space-between;
+        transition: .2s .3s;
+    }
+
+
+    .hamburger {
+        display: flex;
+        background: none;
+
+
+
+        border: none;
+        cursor: pointer;
+        letter-spacing: 3px;
+        gap: 10px;
+        align-items: center;
+        font-size: 12px;
+        font-weight: bold;
+
+    }
+
+    .hamburger span {
+        display: flex;
+        font-size: 20px;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .menu {
+
+        width: 100%;
+        transform: translateY(100%);
+        z-index: 999;
+        background-color: var(--primary-color);
+        transition: .5s ease-in-out;
+
+    }
+
+    .menu * {
+        color: white;
+    }
+
+    .open {
+        transform: translateY(0%);
+    }
+
+    .menu .phoneOptions {
+        opacity: 0;
+    }
+
+    .open .phoneOptions {
+        opacity: 1;
+    }
+
+    .nav {
+        align-items: center;
+    }
+
+    .nav a {
+        border-left: var(--primary-color) 3px solid;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        border-left: var(--background-color) 3px solid;
+    }
+
+    .wordmark {
+        width: 50vw;
+        filter: invert();
+    }
+
+    .menuContact {
+        display: none;
+    }
+
 }

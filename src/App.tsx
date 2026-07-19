@@ -9,25 +9,40 @@ import AssessmentAndQuote from "./containers/AssessmentAndQuote";
 import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 
+const MIN_TIME = 1000;
+
 export default function App() {
 
     const [mounted, setMounted] = useState(true);
     const [hide, setHide] = useState(false);
 
     useEffect(() => {
-        const timer1 = setTimeout(() => {
-            setHide(true);
-        }, 1500);
+        const startTime = Date.now();
 
-        const timer2 = setTimeout(() => {
-            setMounted(false);
-        }, 2000);
+        function finishLoading() {
+            const elapsed = Date.now() - startTime;
+            const remaining = Math.max(0, MIN_TIME - elapsed);
+
+            setTimeout(() => {
+                setHide(true);
+
+                setTimeout(() => {
+                    setMounted(false);
+                }, 1000);
+            }, remaining);
+        }
+
+        if (document.readyState === "complete") {
+            finishLoading();
+        } else {
+            window.addEventListener("load", finishLoading);
+        }
 
         return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
+            window.removeEventListener("load", finishLoading);
         };
     }, []);
+
     return (
         <>
 

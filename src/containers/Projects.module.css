@@ -38,7 +38,6 @@
 
 .heroSpan {
     position: absolute;
-    font-size: 10vw;
     bottom: 0;
     font-weight: 500;
     background: linear-gradient(180deg, var(--primary-color), transparent);
@@ -48,6 +47,7 @@
     line-height: 0.75;
     display: inline-block;
     width: fit-content;
+    font-size: 10vw;
 }
 
 .heroLinks {
@@ -55,6 +55,15 @@
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.heroLinks a {
+    border-bottom: 3px solid var(--background-color);
+    transition: .2s;
+}
+
+.heroLinks a:hover {
+    border-bottom: 3px solid var(--primary-text-color);
 }
 
 .heroLinks a {
@@ -114,4 +123,130 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--default-padding);
+}
+
+@media (min-width: 769px) and (max-width: 1150px) {
+
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .heroContent {
+        padding-top: 12vh;
+        height: 75vh;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .heroContentTexts {
+        gap: 35px;
+        flex: 1;
+    }
+
+    .heroContent img {
+        width: 40%;
+        max-width: 340px;
+        height: auto;
+        align-self: flex-end;
+    }
+
+    .heroSpan {
+        font-size: 11vw;
+    }
+
+    .heroLinks {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .heroLinks a {
+        font-size: 18px;
+    }
+
+    .mouseIndicator {
+        margin-top: 6vh;
+    }
+
+    .projectsContainer {
+        margin-top: 50px;
+        gap: 40px;
+    }
+
+    .projects {
+        gap: 30px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        justify-content: center;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .heroContent {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding-top: 40px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .heroContentTexts {
+        align-items: center;
+        gap: 30px;
+    }
+
+    .heroContent img {
+        width: 80%;
+        max-width: 320px;
+        height: auto;
+        align-self: center;
+    }
+
+
+    .heroLinks {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .heroLinks a {
+        font-size: 18px;
+    }
+
+    .projectsContainer {
+        margin-top: 60px;
+        gap: 30px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
 }
