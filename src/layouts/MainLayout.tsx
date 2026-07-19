@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Menu from "../components/Menu.tsx";
+import Menu from "../components/Menu";
 
 export default function MainLayout() {
   return (
