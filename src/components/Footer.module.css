@@ -1,16 +1,15 @@
 .container {
-    margin-top: 200px;
     margin-bottom: var(--default-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 200px;
 }
 
 .footerCTA {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 150px;
 }
 
 .footerCTA h4 {
@@ -29,10 +28,6 @@
     border-bottom: 5px solid var(--primary-text-color);
 }
 
-.footer {
-    margin-top: 100px;
-}
-
 .footerContent {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -49,4 +44,39 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.coffeeContainer {
+    width: 100%;
+    background: linear-gradient(180deg,
+            var(--background-color) 0%,
+            color-mix(in srgb, var(--primary-color) 70%, white) 100%);
+
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skills p {
+    color: var(--primary-text-color);
+}
+
+.copywriting {
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    margin-top: var(--default-padding);
+    gap: 20px;
+}
+
+.copywriting div{
+    display: flex;
+    flex-direction: column;
 }

@@ -8,6 +8,7 @@ import ProjectCard from "../components/ProjectCard";
 import viniciusGabriel from "../assets/images/ViniciusGabriel.png";
 import Footer from "../components/Footer";
 
+
 function Projects() {
 
   return (
@@ -24,7 +25,7 @@ function Projects() {
           <img src={viniciusGabriel} alt="Foto Profissional" />
           <span className={styles.heroSpan}>Desenvolvedor</span>
         </div>
-        <div className="line"/>
+        <div className="line" />
         <div className={styles.heroLinks}>
           <a href="#projects">Ver Projetos</a>
           <p>ou</p>

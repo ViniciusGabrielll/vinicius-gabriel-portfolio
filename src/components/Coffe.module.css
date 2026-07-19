@@ -13,7 +13,7 @@
     width: 200px;
     height: 150px;
 
-    background: #c4c4c4;
+    background: var(--background-color);
     cursor: pointer;
     border-radius: 0px 0px 50% 50%;
     z-index: 1;
@@ -32,14 +32,14 @@
 
     top: -30px;
 
-    border: #c4c4c4 10px solid;
+    border: var(--background-color) 10px solid;
 
     height: 60px;
     width: 100%;
 
     border-radius: 50% 50%;
 
-    background-color: #a0a0a0;
+    background-color: #dedede;
     overflow: hidden;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .coffee.animating {
-    animation: coffee 1s ease-in-out ;
+    animation: coffee 1s ease-in-out;
 }
 
 @keyframes coffee {
@@ -165,72 +165,18 @@
     width: 50px;
     height: 70px;
 
-    border: 15px solid #c4c4c4;
+    border: 15px solid white;
     border-right: none;
 
     border-radius: 50px 0 0 50px;
 }
 
-.steam {
-    position: absolute;
-
-    bottom: 140px;
-
-    width: 10px;
-    height: 80px;
-
-    background: rgb(208, 208, 208);
-
-    border-radius: 100px;
-    z-index: 2;
-
-    filter: blur(10px);
-
-    opacity: .5;
-
-    animation: steam 4s ease-in-out infinite;
-}
-
-.steam:nth-of-type(1) {
-    left: 90px;
-    animation-delay: 1.6s;
-}
-
-.steam:nth-of-type(2) {
-    left: 140px;
-}
-
-.steam:nth-of-type(3) {
-    left: 40px;
-    animation-delay: .8s;
-}
-
-@keyframes steam {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateY(0) translateX(0) scale(.8);
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateY(-90px) translateX(0px) scale(1.8);
-    }
-
-}
-
 .plate {
     position: absolute;
-    background-color: #c4c4c4;
+    background-color: white;
     width: 280px;
     height: 75px;
     border-radius: 50%;
     bottom: -20px;
-    border: 10px solid #c1c1c1;
+    border: 10px solid #f3f3f3;
 }

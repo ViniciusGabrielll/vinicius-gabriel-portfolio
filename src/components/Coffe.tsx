@@ -1,24 +1,38 @@
 import { useState } from "react";
 import styles from "./Coffe.module.css";
 
-export default function Coffee() {
+type CoffeeProps = {
+    infinite?: boolean;
+};
 
-    const [animating, setAnimating] = useState(false);
+export default function Coffee({ infinite = false }: CoffeeProps) {
+
+    const [animating, setAnimating] = useState(infinite);
 
     function handleClick() {
         setAnimating(true);
     }
+
+    function handleAnimationEnd() {
+        if (infinite == false) {
+            setAnimating(false);
+        }
+    }
+
     return (
         <div className={styles.coffeeContainer}>
             <div className={`${styles.cupWrapper} ${animating ? styles.animating : ""}`}
                 onClick={handleClick}
-                onAnimationEnd={() => setAnimating(false)}>
-                <div className={`${styles.cup} ${animating ? styles.animating : ""}`}>
-                    <span className={styles.steam}></span>
-                    <span className={styles.steam}></span>
-                    <span className={styles.steam}></span>
+                onAnimationEnd={handleAnimationEnd} style={{
+                    animationIterationCount: infinite ? "infinite" : 1
+                }}>
+                <div className={`${styles.cup} ${animating ? styles.animating : ""}`} style={{
+                    animationIterationCount: infinite ? "infinite" : 1
+                }}>
                     <div className={styles.inside}>
-                        <div className={`${styles.coffee} ${animating ? styles.animating : ""}`}></div>
+                        <div className={`${styles.coffee} ${animating ? styles.animating : ""}`} style={{
+                            animationIterationCount: infinite ? "infinite" : 1
+                        }}></div>
                     </div>
 
 
@@ -27,6 +41,6 @@ export default function Coffee() {
             </div>
 
             <div className={styles.plate}></div>
-        </div>
+        </div >
     )
 }
