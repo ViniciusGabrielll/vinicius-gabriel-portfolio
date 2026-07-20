@@ -5,9 +5,8 @@ function AssessmentAndQuote() {
   return (
     <>
       <div className={styles.container}>
-        <h1>Em Construção</h1>
-        <p>Ultima atualização foi em 18/07/2026</p>
-
+        <span>Em Construção</span>
+        <span>Ultima atualização foi em 18/07/2026</span>
       </div>
     </>
   )

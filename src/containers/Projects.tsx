@@ -17,8 +17,8 @@ function Projects() {
         <div className={styles.heroContent}>
           <div className={styles.heroContentTexts}>
             <div>
-              <h2>ESPECIALISTA EM</h2>
-              <h1>Desenvolvimento<br />Web</h1>
+              <h2>VINÍCIUS GABRIEL</h2>
+              <h1>Criação de Sites Profissionais, Landing Pages e Sistemas Web</h1>
             </div>
             <p>Cada projeto é desenvolvido com foco em design, performance e conversão, unindo uma experiência visual marcante a resultados reais para o seu negócio.</p>
           </div>
@@ -38,7 +38,7 @@ function Projects() {
       </article>
 
       <article className={styles.projectsContainer} id="projects">
-        <h1>Projetos escolhidos</h1>
+        <h2>Projetos escolhidos</h2>
 
         <div className={styles.projects}>
 

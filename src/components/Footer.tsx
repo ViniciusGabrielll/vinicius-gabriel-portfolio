@@ -16,7 +16,7 @@ export default function Footer() {
         <footer className={styles.container}>
             <Link to="/contact" className={styles.footerCTA}>
                 <h4>PRECISA DE UM SITE?</h4>
-                <h1>Vamos trabalhar juntos <img src={arrow} /></h1>
+                <h2>Vamos trabalhar juntos <img src={arrow} /></h2>
             </Link>
 
             <div className={styles.coffeeContainer}>
