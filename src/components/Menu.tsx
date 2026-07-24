@@ -75,7 +75,7 @@ function Menu() {
                 </nav>
 
                 <div className={styles.menuContactConteiner}>
-                    <a href={data.whatsapp} className={styles.menuContact}>
+                    <a href={data.whatsappLink} className={styles.menuContact}>
                         <img src={whatsapp} alt="WhatsApp" />
                         <span>WhatsApp</span>
                     </a>
