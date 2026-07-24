@@ -1,0 +1,156 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sliderContainer {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+/* Barra cinza */
+.track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #d9d9d9;
+    border-radius: 999px;
+    transform: translateY(-50%);
+}
+
+/* Barra azul */
+.progress {
+    position: absolute;
+    top: 50%;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 999px;
+    transform: translateY(-50%);
+}
+
+/* Range */
+.slider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 28px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: transparent;
+    pointer-events: none;
+}
+
+/* Chrome */
+.slider::-webkit-slider-runnable-track {
+    height: 6px;
+    background: transparent;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+    background: var(--primary-color);
+
+    border: 4px solid #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .18);
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    margin-top: -8px;
+    transition: .2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Firefox */
+.slider::-moz-range-track {
+    height: 6px;
+    background: transparent;
+}
+
+.slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+
+    border: 4px solid white;
+    border-radius: 50%;
+    background: var(--primary-color);
+
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+.inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.inputGroup label {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.inputWrapper span {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777;
+
+    pointer-events: none;
+}
+
+.inputWrapper input {
+    width: 100%;
+    height: 55px;
+
+    padding: 0 1rem 0 3rem;
+
+    border: 2px solid #d9d9d9;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.inputWrapper input:focus {
+    border-color: var(--primary-color);
+}

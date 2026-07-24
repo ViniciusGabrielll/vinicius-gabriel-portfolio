@@ -12,13 +12,6 @@
     flex-direction: column;
 }
 
-.footerCTA h4 {
-    color: var(--secondary-text-color);
-    letter-spacing: 3px;
-    font-weight: normal;
-
-}
-
 .footerCTA h1 {
     border-bottom: 5px solid var(--background-color);
     transition: .2s;
@@ -95,11 +88,6 @@
         margin-top: 140px;
     }
 
-    .footerCTA h4 {
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
-
     .footerCTA h1 {
         text-align: center;
     }
@@ -128,11 +116,6 @@
     .container {
         margin-top: 80px;
         text-align: center;
-    }
-
-    .footerCTA h4 {
-        font-size: 14px;
-        letter-spacing: 2px;
     }
 
     .footerCTA h1 {

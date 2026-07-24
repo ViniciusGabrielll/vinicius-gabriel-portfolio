@@ -3,6 +3,203 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.contentContainer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--default-padding);
+}
+
+.nextBtn {
+    width: 150px;
+    height: var(--default-padding);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: var(--primary-color) 3px solid;
+    font-weight: bold;
+    position: absolute;
+    right: var(--default-padding);
+    bottom: var(--default-padding);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.nextBtn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.previousBtn {
+    width: 150px;
+    height: var(--default-padding);
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
+    border: var(--secondary-text-color) 3px solid;
+    font-weight: bold;
+    position: absolute;
+    left: var(--default-padding);
+    bottom: var(--default-padding);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.previousBtn:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--background-color);
+}
+
+.steps {
+    position: absolute;
+    right: var(--default-padding);
+    top: var(--default-padding);
+    display: flex;
+
+}
+
+.step {
+    width: var(--default-padding);
+    height: var(--default-padding);
+    background-color: var(--primary-color);
+    opacity: 0.1;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    color: var(--background-color);
+}
+
+.activeStep {
+    opacity: 1;
+    background-color: var(--primary-color);
+}
+
+.investContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-padding);
+}
+
+.sendBtn {
+    width: 200px;
+    height: var(--default-padding);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: var(--primary-color) 3px solid;
+    font-weight: bold;
+    position: absolute;
+    right: var(--default-padding);
+    bottom: var(--default-padding);
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.sendBtn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.aboutContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputGroup label {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    align-self: flex-start;
+}
+
+.inputGroup input,
+.inputGroup select {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+
+    padding: 0 1rem;
+    outline: none;
+
+    font-size: .95rem;
+
+    transition: .2s;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+    border-color: var(--primary-color);
+}
+
+.phoneInput {
+    display: flex;
+
+    height: 50px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.phoneInput span {
+    width: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fafafa;
+
+    border-right: 1px solid #d8d8d8;
+
+    color: #666;
+}
+
+.phoneInput input {
+    border: none;
+    border-radius: 0;
+}
+
+.phoneInput input:focus {
+    border: none;
+}
+
+@media (max-width: 800px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fullWidth {
+        grid-column: auto;
+    }
 }

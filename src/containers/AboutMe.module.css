@@ -1,8 +1,99 @@
 .container {
-    width: 75vw;
-    height: 100vh;
+    padding-left: var(--default-padding);
+    padding-right: var(--default-padding);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-top: 100px;
+    padding-bottom: var(--default-padding);
+}
+
+.feedbackContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--default-padding);
+}
+
+.feedback {
+    width: 100%;
+    height: 400px;
+    padding: 25px;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-padding);
+}
+
+.feedback p {
+    color: var(--primary-text-color);
+    text-align: start;
+}
+
+.feedbackPerfil {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.feedbackPerfil img {
+    width: 50px;
+    border-radius: 50%;
+    border: var(--secondary-text-color) 2px solid;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 100%;
+    height: 75vh;
     justify-content: center;
+}
+
+.toolsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.toolsImages {
+    display: flex;
+    gap: 40px;
+}
+
+.tool {
+    width: 60px;
+    height: 60px;
+    padding-bottom: 10px;
+
+    flex-shrink: 0;
+
+    border-bottom: 3px solid var(--background-color);
+    transition: 0.2s;
+
+}
+
+.tool:hover {
+    border-bottom: 3px solid var(--secondary-text-color);
+}
+
+.toolName {
+    height: 16px;
 }

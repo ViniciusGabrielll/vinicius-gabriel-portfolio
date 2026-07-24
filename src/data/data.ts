@@ -2,7 +2,8 @@ import projectEquipeCyberTech from "../assets/images/projects/projectEquipeCyber
 
 export const data = {
     phone: "+55 (81) 9 8583-2291",
-    whatsapp: "https://www.instagram.com/vinigabrieloli/",
+    whatsappNumber: "5581985832291",
+    whatsappLink: "https://www.instagram.com/vinigabrieloli/",
     instagram: "https://www.instagram.com/vinigabrieloli/",
 
     projects: [

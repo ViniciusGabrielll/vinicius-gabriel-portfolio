@@ -1,0 +1,92 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--default-padding);
+    margin-top: 2rem;
+}
+
+.column {
+    min-height: 385px;
+
+    border: 2px solid #d8d8d8;
+
+    background: #fafafa;
+
+    transition: .2s;
+}
+
+.over {
+    border-color: var(--primary-color);
+    background: rgba(0, 119, 255, .05);
+}
+
+.column h2 {
+    font-size: 26px;
+    margin: 25px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    border: 1px solid #d8d8d8;
+
+    background: white;
+
+    cursor: grab;
+
+    transition: .2s;
+}
+
+.card:hover {
+    box-shadow: rgba(100,100,111,.2) 0px 7px 29px;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.texts {
+    text-align: start;
+    margin-left: 20px;
+}
+
+.texts h3 {
+    margin-bottom: 3px;
+    font-size: 16px;
+
+}
+
+.texts p {
+    color: #777;
+    font-size: 12px;
+}
+
+.card span {
+    min-width: 90px;
+    height: 100%;
+
+    padding: .75rem;
+
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    color: white;
+    background: var(--primary-color);
+}
+
+.availableCard span {
+    background-color: var(--secondary-text-color);
+}
+
+.total {
+    margin-top: 2rem;
+    font-size: 22px;
+    text-align: right;
+}
