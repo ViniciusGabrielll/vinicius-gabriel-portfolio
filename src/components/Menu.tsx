@@ -79,7 +79,7 @@ function Menu() {
                         <img src={whatsapp} alt="WhatsApp" />
                         <span>WhatsApp</span>
                     </a>
-                    <a href={data.instagram} className={styles.menuContact}>
+                    <a href={data.instagramLink} className={styles.menuContact}>
                         <img src={instagram} alt="Instagram" />
                         <span>Instagram</span>
                     </a>

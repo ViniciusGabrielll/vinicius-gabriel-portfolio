@@ -5,6 +5,7 @@
   --primary-text-color: #141211;
   --default-padding: 50px;
   --secondary-text-color: #8F8887;
+  --secondary-text-color-light: #D9D9D9;
 }
 
 ::selection {

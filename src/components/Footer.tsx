@@ -27,15 +27,19 @@ export default function Footer() {
                 <div className="line" />
                 <div className={styles.footerContent}>
                     <div className={styles.footerCard}>
-                        <h3>Informações <br />Contato -</h3>
+                        <h3>Informações <br />Contato —</h3>
                         <p>Estou disponível para conversar a qualquer momento. É só me chamar no WhatsApp que eu explico tudo!</p>
                         <div>
-                            <p><strong>W</strong>: {data.phone}</p>
-                            <p><strong>IN</strong>: @vinigabrieloli</p>
+                            <a href={data.whatsappLink}>
+                                <p><strong>W</strong>: {data.phone}</p>
+                            </a>
+                            <a href={data.instagramLink}>
+                                <p><strong>IN</strong>: @{data.instagram}</p>
+                            </a>
                         </div>
                     </div>
                     <div className={styles.footerCard}>
-                        <h3>O que eu<br />faço -</h3>
+                        <h3>O que eu<br />faço —</h3>
                         <div className={styles.skills}>
                             <p>Landing Page</p>
                             <p>CRM</p>
@@ -44,11 +48,11 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className={styles.footerCard}>
-                        <h3>Disponibilidade<br />atual -</h3>
+                        <h3>Disponibilidade<br />atual —</h3>
                         <p>Trabalho por demanda, então consigo atender projetos de diferentes portes. Dependendo da complexidade, apenas o prazo de entrega pode ser maior.</p>
                     </div>
                     <div className={styles.footerCard}>
-                        <h3>Avaliação e<br />Orçamento -</h3>
+                        <h3>Avaliação e<br />Orçamento —</h3>
                         <p>Avalie através desse site quanto e como ficaria o seu site.</p>
                     </div>
                 </div>

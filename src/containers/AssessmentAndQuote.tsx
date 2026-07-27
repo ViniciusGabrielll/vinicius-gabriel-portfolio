@@ -4,6 +4,10 @@ import BudgetSlider from "./BudgetSlider";
 import FeaturesSelector from "../components/FeaturesSelector";
 import { data } from "../data/data";
 
+import site from "../assets/icons/site.svg";
+import adjust from "../assets/icons/adjust.svg";
+import fix from "../assets/icons/fix.svg";
+
 
 function AssessmentAndQuote() {
   const [step, setStep] = useState(0);
@@ -88,38 +92,78 @@ Aguardo seu retorno! 😄
 
       {step === 1 && (
         <div className={styles.contentContainer}>
-          <h2>O que você precisa?</h2>
-          <p>Escolha a opção que melhor descreve o que você precisa no momento.</p>
-
-          <button
-            onClick={() =>
-              setAssessment({
-                ...assessment,
-                need: "Criar um site",
-              })
-            }
-          >
-            <img />
-            <h3>Criar um site</h3>
-            <p>Preciso de um site completo do zero.</p>
-          </button>
-          <button>
-            <img />
-            <h3>Corrigir problemas em um site</h3>
-            <p>Meu site tem erros ou não está funcionando como deveria.</p>
-          </button>
-          <button>
-            <img />
-            <h3>Reformular um site</h3>
-            <p>Quero dar um novo visual ou melhorar meu site atual.</p>
-          </button>
+          <div className={styles.stepTitle}>
+            <h2>O que você precisa?</h2>
+            <p>Escolha a opção que melhor descreve o que você precisa no momento.</p>
+          </div>
+          <div className={styles.buttonsContainer}>
+            <button
+              className={`${styles.optionCard} ${assessment.need === "Criar um site" ? styles.selected : ""
+                }`}
+              onClick={() =>
+                setAssessment({
+                  ...assessment,
+                  need: "Criar um site",
+                })
+              }
+            >
+              <div className={styles.btnImg}>
+                <img src={site} />
+              </div>
+              <div className={styles.btnContent}>
+                <h3>Criar um site</h3>
+                <p>Preciso de um site completo do zero.</p>
+              </div>
+            </button>
+            <button
+              className={`${styles.optionCard} ${assessment.need === "Corrigir problemas em um site"
+                ? styles.selected
+                : ""
+                }`}
+              onClick={() =>
+                setAssessment({
+                  ...assessment,
+                  need: "Corrigir problemas em um site",
+                })
+              }
+            >
+              <div className={styles.btnImg}>
+                <img src={adjust} />
+              </div>
+              <div className={styles.btnContent}>
+                <h3>Corrigir problemas em um site</h3>
+                <p>Meu site tem erros ou não está funcionando como deveria.</p>
+              </div>
+            </button>
+            <button
+              className={`${styles.optionCard} ${assessment.need === "Reformular um site" ? styles.selected : ""
+                }`}
+              onClick={() =>
+                setAssessment({
+                  ...assessment,
+                  need: "Reformular um site",
+                })
+              }
+            >
+              <div className={styles.btnImg}>
+                <img src={fix} />
+              </div>
+              <div className={styles.btnContent}>
+                <h3>Reformular um site</h3>
+                <p>Quero dar um novo visual ou melhorar meu site atual.</p>
+              </div>
+            </button>
+          </div>
         </div>
       )}
 
       {step === 2 && (
         <div className={styles.contentContainer}>
           <div className={styles.investContainer}>
-            <h2>Quanto pretende investir?</h2>
+            <div className={styles.stepTitle}>
+              <h2>Quanto pretende investir?</h2>
+              <p>Defina uma faixa de investimento que esteja de acordo com o que você pretende investir no seu projeto.</p>
+            </div>
             <BudgetSlider
               onChange={(budget) =>
                 setAssessment({
@@ -134,12 +178,10 @@ Aguardo seu retorno! 😄
 
       {step === 3 && (
         <div className={styles.contentContainer}>
-          <h2>O que o seu site precisa ter?</h2>
-
-          <p>
-            Arraste os recursos que deseja incluir no seu site.
-          </p>
-
+          <div className={styles.stepTitle}>
+            <h2>O que o seu site precisa ter?</h2>
+            <p>Arraste os recursos que deseja incluir no seu site.</p>
+          </div>
           <FeaturesSelector
             onChange={(features) =>
               setAssessment((prev) => ({
@@ -154,7 +196,7 @@ Aguardo seu retorno! 😄
       {step === 4 && (
         <div className={styles.contentContainer}>
           <div className={styles.aboutContainer}>
-            <div>
+            <div className={styles.stepTitle}>
               <h2>Me fale sobre você</h2>
               <p>
                 Preencha seus dados para que eu possa entender melhor sobre o seu
@@ -279,7 +321,7 @@ Aguardo seu retorno! 😄
             Anterior
           </button>
         )}
-        
+
         <button
           onClick={step === 4 ? sendWhatsapp : nextStep}
           className={styles.nextBtn}

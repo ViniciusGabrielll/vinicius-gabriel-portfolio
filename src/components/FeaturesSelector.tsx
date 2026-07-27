@@ -10,7 +10,7 @@ import type { DragEndEvent } from "@dnd-kit/core";
 
 import styles from "./FeaturesSelector.module.css";
 
-type FeatureType = "optional" | "recommended" | "required";
+type FeatureType = "opicional" | "recomendado" | "obrigatório";
 
 interface Feature {
     id: number;
@@ -27,7 +27,7 @@ const initialFeatures: Feature[] = [
         title: "Landing Page",
         description: "Página inicial do site focada em converter clientes.",
         price: 297,
-        type: "required",
+        type: "obrigatório",
         selected: true,
     },
     {
@@ -35,7 +35,7 @@ const initialFeatures: Feature[] = [
         title: "Acompanhamento de 15 dias",
         description: "Acompanhamento para mudanças no site durante 15 dias.",
         price: 99,
-        type: "recommended",
+        type: "recomendado",
         selected: true,
     },
     {
@@ -43,7 +43,7 @@ const initialFeatures: Feature[] = [
         title: "Páginas complexas",
         description: "Adiciona mais diversidade de páginas ao site.",
         price: 107,
-        type: "recommended",
+        type: "recomendado",
         selected: true,
     },
     {
@@ -51,7 +51,7 @@ const initialFeatures: Feature[] = [
         title: "Autonomia para mudanças no site",
         description: "Adiciona formas de edição  no próprio site.",
         price: 154,
-        type: "optional",
+        type: "opicional",
         selected: false,
     },
     {
@@ -59,7 +59,7 @@ const initialFeatures: Feature[] = [
         title: "Blog ou área de notícias",
         description: "Área para adicionar informações livremente.",
         price: 193,
-        type: "optional",
+        type: "opicional",
         selected: false,
     },
     {
@@ -67,7 +67,7 @@ const initialFeatures: Feature[] = [
         title: "Design animado e interativo (Three.js)",
         description: "Animações únicas que deixam o site inesquecível.",
         price: 149,
-        type: "optional",
+        type: "opicional",
         selected: false,
     },
 ];
@@ -79,7 +79,7 @@ function Card({
     feature: Feature;
     available: boolean;
 }) {
-    const disabled = feature.type === "required";
+    const disabled = feature.type === "obrigatório";
 
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id: feature.id,
@@ -104,6 +104,10 @@ function Card({
             <div className={styles.texts}>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
+                <p style={{
+                    color: feature.type === "obrigatório" ? "var(--primary-color)" : "var(--secondary-text-color)",
+                    fontWeight: feature.type === "obrigatório" ? "bold" : "auto",
+                }}>{feature.type}</p>
             </div>
 
             <span>R${feature.price}</span>
@@ -190,7 +194,7 @@ export default function FeaturesSelector({
                 return feature;
             }
 
-            if (feature.type === "required") {
+            if (feature.type === "obrigatório") {
                 return feature;
             }
 
