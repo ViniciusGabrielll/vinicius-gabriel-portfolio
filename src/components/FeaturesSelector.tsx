@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
 
-import {
-    DndContext,
-    useDraggable,
-    useDroppable,
-} from "@dnd-kit/core";
-
-import type { DragEndEvent } from "@dnd-kit/core";
-
 import styles from "./FeaturesSelector.module.css";
 
 type FeatureType = "opicional" | "recomendado" | "obrigatório";
@@ -75,39 +67,38 @@ const initialFeatures: Feature[] = [
 function Card({
     feature,
     available,
+    onToggle,
 }: {
     feature: Feature;
     available: boolean;
+    onToggle: (id: number) => void;
 }) {
     const disabled = feature.type === "obrigatório";
 
-    const { attributes, listeners, setNodeRef, transform } = useDraggable({
-        id: feature.id,
-        disabled,
-    });
-
-    const style = transform
-        ? {
-            transform: `translate(${transform.x}px, ${transform.y}px)`,
-        }
-        : undefined;
-
     return (
         <div
-            ref={setNodeRef}
-            style={style}
-            {...listeners}
-            {...attributes}
             className={`${styles.card} ${available ? styles.availableCard : ""
                 }`}
+            onClick={() => onToggle(feature.id)}
         >
             <div className={styles.texts}>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
-                <p style={{
-                    color: feature.type === "obrigatório" ? "var(--primary-color)" : "var(--secondary-text-color)",
-                    fontWeight: feature.type === "obrigatório" ? "bold" : "auto",
-                }}>{feature.type}</p>
+
+                <p
+                    style={{
+                        color:
+                            feature.type === "obrigatório"
+                                ? "var(--primary-color)"
+                                : "var(--secondary-text-color)",
+                        fontWeight:
+                            feature.type === "obrigatório"
+                                ? "bold"
+                                : "normal",
+                    }}
+                >
+                    {feature.type}
+                </p>
             </div>
 
             <span>R${feature.price}</span>
@@ -116,25 +107,18 @@ function Card({
 }
 
 function Column({
-    id,
     title,
     items,
     available,
+    onToggle,
 }: {
-    id: string;
     title: string;
     items: Feature[];
     available: boolean;
+    onToggle: (id: number) => void;
 }) {
-    const { isOver, setNodeRef } = useDroppable({
-        id,
-    });
-
     return (
-        <div
-            ref={setNodeRef}
-            className={`${styles.column} ${isOver ? styles.over : ""}`}
-        >
+        <div className={styles.column}>
             <h2>{title}</h2>
 
             {items.map((feature) => (
@@ -142,6 +126,7 @@ function Column({
                     key={feature.id}
                     feature={feature}
                     available={available}
+                    onToggle={onToggle}
                 />
             ))}
         </div>
@@ -164,6 +149,8 @@ export default function FeaturesSelector({
         );
     }, []);
 
+
+
     const updateFeatures = (newFeatures: Feature[]) => {
         setFeatures(newFeatures);
 
@@ -184,15 +171,14 @@ export default function FeaturesSelector({
         (feature) => feature.selected
     );
 
-    function handleDragEnd(event: DragEndEvent) {
-        if (!event.over) return;
+    const total = selected.reduce(
+        (sum, item) => sum + item.price,
+        0
+    );
 
-        const destination = event.over.id;
-
+    function toggleFeature(id: number) {
         const newFeatures = features.map((feature) => {
-            if (feature.id !== event.active.id) {
-                return feature;
-            }
+            if (feature.id !== id) return feature;
 
             if (feature.type === "obrigatório") {
                 return feature;
@@ -200,39 +186,34 @@ export default function FeaturesSelector({
 
             return {
                 ...feature,
-                selected: destination === "selected",
+                selected: !feature.selected,
             };
         });
 
         updateFeatures(newFeatures);
     }
 
-    const total = selected.reduce(
-        (sum, item) => sum + item.price,
-        0
-    );
-
     return (
-        <DndContext onDragEnd={handleDragEnd}>
+        <>
             <div className={styles.container}>
                 <Column
-                    id="available"
                     title="Disponíveis"
                     items={available}
                     available={true}
+                    onToggle={toggleFeature}
                 />
 
                 <Column
-                    id="selected"
                     title="Selecionados"
                     items={selected}
                     available={false}
+                    onToggle={toggleFeature}
                 />
             </div>
 
             <h2 className={styles.total}>
                 Total: R${total}
             </h2>
-        </DndContext>
+        </>
     );
 }

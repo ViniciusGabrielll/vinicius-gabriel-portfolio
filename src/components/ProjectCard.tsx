@@ -7,15 +7,18 @@ interface ProjectCardProps {
     title: string;
     year: string;
     link: string;
+    CTA: string;
+    textColor: string;
 }
 
-export default function ProjectCard({ image, title, year, link }: ProjectCardProps) {
+export default function ProjectCard({ image, title, year, link, CTA, textColor }: ProjectCardProps) {
     return (
         <a href={link} target="_blank" className={styles.container}>
-            <div style={{ backgroundImage: `url(${image})` }} className={styles.cardImg}>
+            <div style={{ backgroundImage: `url(${image})` }} className={`${styles.cardImg} ${textColor === "dark" ? styles.darkText : ""
+                }`}>
                 <span>{year}</span>
                 <h3>{title}</h3>
-                <p>Ver no site <img src={arrow}/></p>
+                <p>{CTA} <img src={arrow} /></p>
             </div>
         </a>
     )

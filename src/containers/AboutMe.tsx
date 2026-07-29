@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./AboutMe.module.css";
+
+import { data } from "../data/data";
 import Footer from "../components/Footer";
 
 import figma from "../assets/icons/figma.svg";
@@ -13,6 +15,7 @@ import springBoot from "../assets/icons/springBoot.svg";
 import react from "../assets/icons/react.svg";
 
 import sarahLima from "../assets/images/clients/sarahLimaVieira.jpg";
+import maxima from "../assets/images/clients/clinicamaxima.jpg";
 
 function AboutMe() {
 
@@ -32,25 +35,24 @@ function AboutMe() {
         <section className={styles.feedbackContainer}>
           <div className={styles.feedback}>
             <div className={styles.feedbackPerfil}>
-              <img src={sarahLima} />
-              <p>@fisio.sarah.lima</p>
+              <img src={maxima} />
+              <p>Centro Médico Máxima</p>
             </div>
-            <p className={styles.comment}>O melhor que temos!! Muito grata pelo site que fez para meu perfil profissional🙌🏼</p>
+            <p className={styles.comment}>Um investimento que valeu a pena e continua trazendo resultados.</p>
           </div>
           <div className={styles.feedback}>
             <div className={styles.feedbackPerfil}>
               <img src={sarahLima} />
-              <p>@fisio.sarah.lima</p>
+              <p>Sarah Lima Vieira</p>
             </div>
             <p className={styles.comment}>O melhor que temos!! Muito grata pelo site que fez para meu perfil profissional🙌🏼</p>
           </div>
-          <div className={styles.feedback}>
+          <a href={data.whatsappLink} className={`${styles.feedback} ${styles.feedbackLink}`}>
             <div className={styles.feedbackPerfil}>
-              <img src={sarahLima} />
-              <p>@fisio.sarah.lima</p>
+              <p>Você</p>
             </div>
-            <p className={styles.comment}>O melhor que temos!! Muito grata pelo site que fez para meu perfil profissional🙌🏼</p>
-          </div>
+            <p className={styles.comment}>Sua opinião é muito importante. Deixe seu feedback!</p>
+          </a>
         </section>
       </article>
 

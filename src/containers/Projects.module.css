@@ -128,8 +128,8 @@
 @media (min-width: 769px) and (max-width: 1150px) {
 
     .container {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: var(--default-padding);
+        padding-right: var(--default-padding);
     }
 
     .hero {

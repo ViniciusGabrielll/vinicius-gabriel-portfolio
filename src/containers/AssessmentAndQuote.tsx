@@ -79,7 +79,7 @@ Aguardo seu retorno! 😄
     <div className={styles.container}>
       {step === 0 && (
         <div className={styles.contentContainer}>
-          <div className={styles.startContainer}>
+          <div className={styles.stepTitle}>
             <h2>Avaliação e Orçamento</h2>
             <p>
               Este é um breve questionário para entender suas necessidades e
@@ -180,7 +180,7 @@ Aguardo seu retorno! 😄
         <div className={styles.contentContainer}>
           <div className={styles.stepTitle}>
             <h2>O que o seu site precisa ter?</h2>
-            <p>Arraste os recursos que deseja incluir no seu site.</p>
+            <p>Clique em um serviço para muda-lo de status</p>
           </div>
           <FeaturesSelector
             onChange={(features) =>
@@ -328,29 +328,6 @@ Aguardo seu retorno! 😄
         >
           {step === 4 ? "Enviar pelo WhatsApp" : step === 0 ? "Começar" : "Próximo"}
         </button>
-
-        <div className={styles.steps}>
-          {Array.from({ length: TOTAL_STEPS }).map((_, index) => {
-            const distance = Math.abs(index - step);
-
-            const opacity =
-              distance === 0 ? 1 :
-                distance === 1 ? 0.7 :
-                  distance === 2 ? 0.4 :
-                    0.2;
-
-            return (
-              <div
-                key={index}
-                className={`${styles.step} ${index === step ? styles.activeStep : ""
-                  }`}
-                style={{
-                  opacity: index === step ? 1 : opacity,
-                }}
-              />
-            );
-          })}
-        </div>
       </div>
     </div>
   );

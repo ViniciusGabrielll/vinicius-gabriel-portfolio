@@ -49,6 +49,8 @@ function Projects() {
               title={project.title}
               year={project.year}
               link={project.link}
+              CTA={project.CTA}
+              textColor={project.textColor}
             />
           ))}
         </div>
