@@ -73,8 +73,6 @@ function Card({
     available: boolean;
     onToggle: (id: number) => void;
 }) {
-    const disabled = feature.type === "obrigatório";
-
     return (
         <div
             className={`${styles.card} ${available ? styles.availableCard : ""

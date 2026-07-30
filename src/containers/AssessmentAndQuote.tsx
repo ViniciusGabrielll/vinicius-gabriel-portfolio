@@ -24,8 +24,6 @@ function AssessmentAndQuote() {
     }
   };
 
-  const TOTAL_STEPS = 5;
-
   const [assessment, setAssessment] = useState({
     need: "",
     budget: {
