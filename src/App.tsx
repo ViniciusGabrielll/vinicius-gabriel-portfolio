@@ -8,6 +8,7 @@ import Contact from "./containers/Contact";
 import AssessmentAndQuote from "./containers/AssessmentAndQuote";
 import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
+import ScrollToTop from "./components/ScrollToTop";
 
 const MIN_TIME = 1000;
 
@@ -48,6 +49,7 @@ export default function App() {
 
             {mounted && <Preloader hide={hide} />}
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route element={<MainLayout />}>
                         <Route path="/" element={<Projects />} />
