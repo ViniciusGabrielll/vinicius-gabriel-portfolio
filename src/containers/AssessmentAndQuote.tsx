@@ -7,6 +7,7 @@ import { data } from "../data/data";
 import site from "../assets/icons/site.svg";
 import adjust from "../assets/icons/adjust.svg";
 import fix from "../assets/icons/fix.svg";
+import { useReveal } from "../hooks/useReveal";
 
 
 function AssessmentAndQuote() {
@@ -73,10 +74,12 @@ Aguardo seu retorno! 😄
     );
   };
 
+  const firstStep = useReveal<HTMLDivElement>();
+
   return (
     <div className={styles.container}>
       {step === 0 && (
-        <div className={styles.contentContainer}>
+        <div ref={firstStep.ref} className={`${styles.contentContainer} animate ${firstStep.visible ? "show" : "hidden"}`}>
           <div className={styles.stepTitle}>
             <h2>Avaliação e Orçamento</h2>
             <p>

@@ -16,15 +16,21 @@ import react from "../assets/icons/react.svg";
 
 import sarahLima from "../assets/images/clients/sarahLimaVieira.jpg";
 import maxima from "../assets/images/clients/clinicamaxima.jpg";
+import { useReveal } from "../hooks/useReveal";
 
 function AboutMe() {
 
   const [toolName, setToolName] = useState("");
 
+  const hero = useReveal<HTMLElement>();
+  const services = useReveal<HTMLElement>();
 
   return (
     <div className={styles.container}>
-      <article className={styles.hero}>
+      <article
+        ref={hero.ref}
+        className={`${styles.hero} animate ${hero.visible ? "show" : "hidden"}`}
+      >
         <section>
           <h4>Algumas palavras sobre mim</h4>
           <h3>Sou Vinícius Gabriel, designer e desenvolvedor web especializado em criar
@@ -56,7 +62,10 @@ function AboutMe() {
         </section>
       </article>
 
-      <article className={styles.services}>
+      <article
+        ref={services.ref}
+        className={`${styles.services} animate ${services.visible ? "show" : "hidden"}`}
+      >
         <div>
           <h4>SERVIÇOS</h4>
           <h3>Web Design  <span className={styles.servicesBar}>/</span>

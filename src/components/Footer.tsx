@@ -9,11 +9,18 @@ import Coffee from "./Coffe";
 import mark from "../../public/mark.svg";
 
 import { FaHeart } from "react-icons/fa";
+import { useReveal } from "../hooks/useReveal";
 
 
 export default function Footer() {
+
+    const footer = useReveal<HTMLElement>();;
+
     return (
-        <footer className={styles.container}>
+        <footer
+            ref={footer.ref}
+            className={`${styles.container} animate ${footer.visible ? "show" : "hidden"}`}
+        >
             <Link to="/contact" className={styles.footerCTA}>
                 <h4>PRECISA DE UM SITE?</h4>
                 <h2>Vamos trabalhar juntos <img src={arrow} /></h2>

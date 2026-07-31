@@ -4,6 +4,7 @@ import { data } from "../data/data";
 import styles from "./Contact.module.css";
 
 import whatsappBlack from "../assets/icons/whatsappBlack.svg";
+import { useReveal } from "../hooks/useReveal";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -30,10 +31,12 @@ ${message}`;
     window.open(whatsappUrl, "_blank");
   };
 
+  const contact = useReveal<HTMLElement>();
+
   return (
     <>
       <div className={styles.container}>
-        <article className={styles.ContactContainer}>
+        <article ref={contact.ref} className={`${styles.ContactContainer} animate ${contact.visible ? "show" : "hidden"}`}>
 
           <section className={styles.informationsContainer}>
             <div>
