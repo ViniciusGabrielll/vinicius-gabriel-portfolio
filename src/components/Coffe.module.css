@@ -1,200 +1,37 @@
-.coffeeContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cup {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    position: relative;
+.mark {
     width: 200px;
-    height: 150px;
-
-    background: var(--background-color);
+    height: 200px;
     cursor: pointer;
-    border-radius: 0px 0px 50% 50%;
-    z-index: 1;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-
-    transition: .2s;
 }
 
-.cup:hover {
+.mark:hover {
     filter: brightness(0.95);
 }
 
-.inside {
-    z-index: 1;
-    position: relative;
-
-    top: -30px;
-
-    border: var(--background-color) 10px solid;
-
-    height: 60px;
-    width: 100%;
-
-    border-radius: 50% 50%;
-
-    background-color: #dedede;
-    overflow: hidden;
+.animate {
+    animation: spinMark 1s ease;
 }
 
-.coffee {
-    position: absolute;
-
-    height: 40px;
-    width: 100%;
-
-    border-radius: 50%;
-    bottom: -20px;
-
-    background-color: var(--secondary-color);
-}
-
-.cupWrapper {
-    z-index: 2;
-}
-
-.cupWrapper.animating {
-    animation: jump 1s ease-in-out;
-}
-
-.cup.animating {
-    animation: spinCup 1s;
-}
-
-.cup.animating .steam {
-    animation:
-        steam 4s ease-in-out infinite,
-        spinSteam 1s ease-in-out;
-}
-
-.coffee.animating {
-    animation: coffee 1s ease-in-out;
-}
-
-@keyframes coffee {
-    0% {
-        bottom: -20px;
+@keyframes spinMark {
+    from {
         transform: rotate(0deg);
     }
 
-    30% {
-        bottom: -10px;
-        transform: rotate(0deg);
-    }
-
-    60% {
-        transform: rotate(5deg);
-        bottom: -10px;
-    }
-
-    85% {
-        transform: rotate(-5deg);
-        bottom: -10px;
-    }
-
-    100% {
-        bottom: -20px;
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes spinCup {
-
-    0% {
-        transform: rotate(0deg);
-        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    }
-
-    50% {
-        box-shadow: rgba(255, 255, 255, 0) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0) 0px 30px 60px -30px;
-    }
-
-    100% {
+    to {
         transform: rotate(360deg);
-        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     }
-
-}
-
-@keyframes jump {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-150px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes spinSteam {
-
-    0% {
-        opacity: .5;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: .5;
-    }
-
-}
-
-.handle {
-    position: absolute;
-
-    left: -35px;
-    top: 10px;
-
-    width: 50px;
-    height: 70px;
-
-    border: 15px solid white;
-    border-right: none;
-
-    border-radius: 50px 0 0 50px;
-}
-
-.plate {
-    position: absolute;
-    background-color: white;
-    width: 280px;
-    height: 75px;
-    border-radius: 50%;
-    bottom: -20px;
-    border: 10px solid #f3f3f3;
 }
 
 @media (min-width: 769px) and (max-width: 1150px) {
-
-    .coffeeContainer {
+    .mark {
         transform: scale(.85);
         transform-origin: center;
     }
-
 }
 
 @media (max-width: 768px) {
-
-    .coffeeContainer {
+    .mark {
         transform: scale(.65);
         transform-origin: center;
     }
-
 }
