@@ -144,7 +144,7 @@
     }
 
     .wordmarkPhone {
-        width: 50vw;
+        width: 20vw;
     }
 
     .phoneOptions {
@@ -217,7 +217,7 @@
     }
 
     .wordmark {
-        width: 50vw;
+        width: 20vw;
         filter: invert();
     }
 
