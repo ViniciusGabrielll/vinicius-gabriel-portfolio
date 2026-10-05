@@ -9,6 +9,11 @@ import AssessmentAndQuote from "./containers/AssessmentAndQuote";
 import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
+import Blog from "./containers/Blog";
+import AdminLogin from "./containers/admin/AdminLogin";
+import AdminBlog from "./containers/admin/AdminBlog";
+import Admin from "./containers/admin/Admin";
+import AdminLayout from "./layouts/AdminLayout";
 
 const MIN_TIME = 1000;
 
@@ -56,6 +61,14 @@ export default function App() {
                         <Route path="/about" element={<AboutMe />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/assessment-quote" element={<AssessmentAndQuote />} />
+                        <Route path="/blog" element={<Blog />} />
+                    </Route>
+
+                    <Route element={<AdminLayout />} >
+                        <Route path="/admin/login" element={<AdminLogin />} />
+
+                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/admin/blog" element={<AdminBlog />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

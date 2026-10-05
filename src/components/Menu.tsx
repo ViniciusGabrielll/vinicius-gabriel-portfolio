@@ -71,6 +71,14 @@ function Menu() {
                         >
                             Contato
                         </NavLink>
+
+                        <NavLink
+                            to="/blog"
+                            className={({ isActive }) => isActive ? styles.active : ""}
+                            onClick={() => setOpen(false)}
+                        >
+                            Blog
+                        </NavLink>
                     </nav>
                 </nav>
 
