@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import {
     getArticles,
     getArticle,
@@ -8,8 +7,7 @@ import {
 import CreateArticleForm from "../../components/admin/CreateArticleForm";
 import EditArticleForm from "../../components/admin/EditArticleForm";
 
-import styles from "./Admin.module.css";
-import MenuAdmin from "../../components/admin/menuAdmin";
+import styles from "./AdminBlog.module.css";
 
 interface Article {
     id: number;
@@ -18,9 +16,6 @@ interface Article {
     readingTime: number;
     createdAt: string;
     imageUrl: string | null;
-}
-
-interface FullArticle extends Article {
     content: string;
     tags: {
         name: string;
@@ -32,12 +27,10 @@ interface FullArticle extends Article {
 }
 
 export default function AdminBlog() {
-    const token = localStorage.getItem("adminToken");
-
     const [articles, setArticles] = useState<Article[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    const [editingArticle, setEditingArticle] = useState<FullArticle | null>(null);
+    const [editingArticle, setEditingArticle] = useState<Article | null>(null);
 
     useEffect(() => {
         async function loadArticles() {
@@ -54,16 +47,12 @@ export default function AdminBlog() {
         loadArticles();
     }, []);
 
-    if (!token) {
-        return <Navigate to="/admin/login" replace />;
-    }
-
     if (loading) {
         return <main>Carregando artigos...</main>;
     }
 
     return (
-        <main className={styles.admin}>
+        <main className={styles.container}>
             <CreateArticleForm />
 
             {error && <p>{error}</p>}
@@ -82,56 +71,78 @@ export default function AdminBlog() {
             {articles.length === 0 ? (
                 <p>Nenhum artigo cadastrado.</p>
             ) : (
-                <div>
+                <div className={styles.articles}>
                     {articles.map((article) => (
-                        <article key={article.id}>
+                        <article className={styles.article} key={article.id}>
                             {article.imageUrl && (
-                                <img
-                                    src={article.imageUrl}
-                                    alt={article.title}
+                                <div
+                                    className={styles.articleImage}
+                                    style={{ backgroundImage: `url(${article.imageUrl})` }}
                                 />
                             )}
 
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                            <span>{article.readingTime} min de leitura</span>
-                            <button
-                                type="button"
-                                onClick={async () => {
-                                    try {
-                                        const fullArticle = await getArticle(article.id);
-                                        setEditingArticle(fullArticle);
-                                    } catch {
-                                        setError("Não foi possível carregar o artigo.");
-                                    }
-                                }}
-                            >
-                                Editar
-                            </button>
+                            <div className={styles.articleContent}>
+                                <div>
+                                    <div className={styles.articleInfo}>
+                                        <span>
+                                            {new Date(article.createdAt).toLocaleDateString("pt-BR")}
+                                        </span>
+                                        <span>{article.readingTime} min de leitura</span>
+                                    </div>
+                                    <div>
+                                        <h3 className={styles.articleTitle}>{article.title}</h3>
+                                        <p>{article.description}</p>
+                                    </div>
+                                </div>
 
-                            <button
-                                type="button"
-                                onClick={async () => {
-                                    const confirmed = window.confirm(
-                                        "Tem certeza que deseja excluir este artigo?"
-                                    );
+                                <div className={styles.articleTags}>
+                                    {article.tags.map((tag, index) => (
+                                        <span key={index} className={styles.articleTag}>
+                                            {tag.name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
 
-                                    if (!confirmed) {
-                                        return;
-                                    }
+                            <div className={styles.articleAdminButtons}>
+                                <button
+                                    type="button"
+                                    onClick={async () => {
+                                        try {
+                                            const fullArticle = await getArticle(article.id);
+                                            setEditingArticle(fullArticle);
+                                        } catch {
+                                            setError("Não foi possível carregar o artigo.");
+                                        }
+                                    }}
+                                >
+                                    Editar
+                                </button>
 
-                                    try {
-                                        await deleteArticle(article.id);
-                                        setArticles((current) =>
-                                            current.filter((item) => item.id !== article.id)
+                                <button
+                                    type="button"
+                                    onClick={async () => {
+                                        const confirmed = window.confirm(
+                                            "Tem certeza que deseja excluir este artigo?"
                                         );
-                                    } catch {
-                                        setError("Não foi possível excluir o artigo.");
-                                    }
-                                }}
-                            >
-                                Excluir
-                            </button>
+
+                                        if (!confirmed) {
+                                            return;
+                                        }
+
+                                        try {
+                                            await deleteArticle(article.id);
+                                            setArticles((current) =>
+                                                current.filter((item) => item.id !== article.id)
+                                            );
+                                        } catch {
+                                            setError("Não foi possível excluir o artigo.");
+                                        }
+                                    }}
+                                >
+                                    Excluir
+                                </button>
+                            </div>
                         </article>
                     ))}
                 </div>

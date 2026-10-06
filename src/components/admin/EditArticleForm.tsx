@@ -6,6 +6,8 @@ import {
     uploadArticleFile
 } from "../../services/api";
 
+import styles from "./EditArticleForm.module.css";
+
 interface RelatedLink {
     title: string;
     url: string;
@@ -144,7 +146,7 @@ export default function EditArticleForm({
     }
 
     return (
-        <section>
+        <section className={styles.container}>
             <h2>Editar artigo</h2>
 
             <form onSubmit={handleSubmit}>
@@ -327,8 +329,9 @@ export default function EditArticleForm({
                     type="button"
                     onClick={onCancel}
                     disabled={loading}
+                    className={styles.quitButton}
                 >
-                    Cancelar
+                    x
                 </button>
             </form>
         </section>

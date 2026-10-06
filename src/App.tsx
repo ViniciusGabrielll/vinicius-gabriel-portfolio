@@ -65,11 +65,11 @@ export default function App() {
                     </Route>
 
                     <Route element={<AdminLayout />} >
-                        <Route path="/admin/login" element={<AdminLogin />} />
 
                         <Route path="/admin" element={<Admin />} />
                         <Route path="/admin/blog" element={<AdminBlog />} />
                     </Route>
+                    <Route path="/admin/login" element={<AdminLogin />} />
                 </Routes>
             </BrowserRouter>
         </>

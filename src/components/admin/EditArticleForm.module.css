@@ -1,0 +1,29 @@
+.container {
+    position: fixed;
+    background-color: #ffffff;
+    z-index: 2;
+    top: var(--default-padding);
+    left: calc(25vw + var(--default-padding));
+    right: var(--default-padding);
+    padding: var(--default-padding);
+    
+    border: 1px solid var(--secondary-text-color);
+}
+
+.quitButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    background-color: var(--background-color);
+    border: 1px var(--secondary-text-color) solid;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.quitButton:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--background-color);
+}

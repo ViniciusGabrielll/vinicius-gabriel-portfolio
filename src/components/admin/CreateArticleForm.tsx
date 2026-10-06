@@ -6,6 +6,8 @@ import {
     uploadArticleFile
 } from "../../services/api";
 
+import styles from "./CreateArticleForm.module.css";
+
 interface RelatedLink {
     title: string;
     url: string;
@@ -118,10 +120,10 @@ export default function CreateArticleForm() {
     }
 
     return (
-        <section>
+        <section className={styles.container}>
             <h2>Novo artigo</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
                 <div>
                     <label htmlFor="title">Título</label>
                     <input
