@@ -5,12 +5,28 @@
   --primary-text-color: #141211;
   --default-padding: 50px;
   --secondary-text-color: #8F8887;
-  --secondary-text-color-light: #D9D9D9;
+  --secondary-text-color-light: #CAC3C2;
 }
 
 ::selection {
   background-color: var(--primary-color);
   color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-text-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
 }
 
 html {
@@ -24,6 +40,7 @@ body {
   margin-left: 25vw;
 }
 
+
 * {
   font-family: "Geist", sans-serif;
   font-weight: normal;
@@ -31,6 +48,10 @@ body {
   box-sizing: border-box;
   color: var(--primary-text-color);
   margin: 0;
+}
+
+main {
+  width: 100%;
 }
 
 h1,

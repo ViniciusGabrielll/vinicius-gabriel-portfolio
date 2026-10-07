@@ -166,8 +166,6 @@ ${message}`;
           </section>
 
         </article>
-
-        <Footer />
       </div>
     </>
   );

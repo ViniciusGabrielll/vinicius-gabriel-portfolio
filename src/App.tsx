@@ -14,6 +14,7 @@ import AdminLogin from "./containers/admin/AdminLogin";
 import AdminBlog from "./containers/admin/AdminBlog";
 import Admin from "./containers/admin/Admin";
 import AdminLayout from "./layouts/AdminLayout";
+import Article from "./containers/Article";
 
 const MIN_TIME = 1000;
 
@@ -62,6 +63,7 @@ export default function App() {
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/assessment-quote" element={<AssessmentAndQuote />} />
                         <Route path="/blog" element={<Blog />} />
+                        <Route path="/blog/:id" element={<Article />} />
                     </Route>
 
                     <Route element={<AdminLayout />} >
