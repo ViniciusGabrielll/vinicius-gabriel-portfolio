@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Footer from "../components/Footer";
 import { data } from "../data/data";
 import styles from "./Contact.module.css";
 
