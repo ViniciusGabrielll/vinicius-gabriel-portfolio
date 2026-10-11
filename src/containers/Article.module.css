@@ -214,3 +214,198 @@
     justify-content: center;
     align-items: center;
 }
+
+
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 120px;
+    }
+    .articleImage {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        height: 55vh;
+    }
+
+    .articleHeader,
+    .articleContent {
+        width: min(600px, 100%);
+    }
+
+    .linksContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .moreArticles .articles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 100px;
+        padding: calc(var(--default-padding) * 0.75);
+    }
+
+    .backBtn {
+        left: calc(var(--default-padding) * 0.75);
+        top: calc(var(--default-padding) * 0.75);
+        width: 42px;
+        height: 42px;
+        z-index: 1;
+    }
+
+    .backBtn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .articleImage {
+        height: 40vh;
+        min-height: 250px;
+        background-position: center;
+    }
+
+    .articleHeader,
+    .articleContent {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .articleHeader {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        gap: 0.75rem;
+    }
+
+    .articleInfo {
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+    }
+
+    .articleInfo span {
+        font-size: 0.85rem;
+    }
+
+    .articleContent {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .downloadBtn {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .linksSection {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .linksContainer {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+
+    .linksContainer a {
+        min-width: 0;
+        height: auto;
+        min-height: 85px;
+        padding: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+
+    .linksContainer a div {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .linksContainer a small {
+        overflow-wrap: anywhere;
+    }
+
+    .moreArticles {
+        margin-top: var(--default-padding);
+    }
+
+    .moreArticles .articles {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--default-padding);
+    }
+
+    .pagination {
+        height: 60px;
+        padding: 0.5rem;
+    }
+
+    .pagination * {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .backBtn {
+        top: 1rem;
+        left: 1rem;
+        width: 38px;
+        height: 38px;
+    }
+
+    .articleImage {
+        height: 30vh;
+        min-height: 200px;
+    }
+
+    .articleHeader {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        gap: 0.5rem;
+    }
+
+    .articleInfo {
+        gap: 0.5rem;
+    }
+
+    .articleInfo span {
+        font-size: 0.75rem;
+    }
+
+    .articleContent {
+        font-size: 0.95rem;
+        gap: 1rem;
+    }
+
+    .downloadBtn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .linksSection {
+        padding: 0.75rem;
+    }
+
+    .linksContainer a {
+        gap: 0.5rem;
+        padding: 0.65rem;
+    }
+
+    .linksContainer a small {
+        font-size: 0.75rem;
+    }
+
+    .pagination {
+        height: 55px;
+        padding: 0.25rem;
+    }
+
+    .pagination * {
+        font-size: 0.8rem;
+    }
+}

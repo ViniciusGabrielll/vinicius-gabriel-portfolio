@@ -26,7 +26,7 @@ function Projects() {
           <div className={styles.heroContentTexts}>
             <div>
               <h2>VINÍCIUS GABRIEL</h2>
-              <h1>Criação de Sites Profissionais, Landing Pages e Sistemas Web</h1>
+              <h1>Criação de Sites Profissionais</h1>
             </div>
             <p>
               Cada projeto é desenvolvido com foco em design, performance e

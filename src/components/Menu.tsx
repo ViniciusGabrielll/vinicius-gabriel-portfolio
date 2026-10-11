@@ -6,15 +6,47 @@ import { NavLink } from "react-router-dom";
 
 import whatsapp from "../assets/icons/whatsapp.svg";
 import instagram from "../assets/icons/instagram.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Menu() {
 
     const [open, setOpen] = useState(false);
 
+    const [hidden, setHidden] = useState(false);
+
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (open) {
+                setHidden(false);
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY <= 80) {
+                setHidden(false);
+            } else if (currentScrollY > lastScrollY) {
+                setHidden(true);
+            } else if (currentScrollY < lastScrollY) {
+                setHidden(false);
+            }
+
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [open]);
+
     return (
         <>
-            <div className={styles.menuPhone}>
+            <div className={`${styles.menuPhone} ${hidden ? styles.headerHidden : ""}`}>
                 <img src={wordmark} alt="wordmark" className={styles.wordmarkPhone} />
                 <button
                     className={styles.hamburger}
