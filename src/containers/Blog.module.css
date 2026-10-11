@@ -2,6 +2,11 @@
     padding: var(--default-padding);
 }
 
+.carregando {
+    padding: var(--default-padding);
+    font-size: 2rem;
+}
+
 .articles {
     margin-top: var(--default-padding);
     width: 100%;

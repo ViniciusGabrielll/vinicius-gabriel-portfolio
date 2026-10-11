@@ -63,11 +63,11 @@ export default function Blog() {
     }, [articles]);
 
     if (loading) {
-        return <main>Carregando artigos...</main>;
+        return <main className={styles.carregando}>Carregando artigos...</main>;
     }
 
     if (error) {
-        return <main>{error}</main>;
+        return <main className={styles.carregando}>{error}</main>;
     }
 
     const sortedArticles = [...articles].sort(

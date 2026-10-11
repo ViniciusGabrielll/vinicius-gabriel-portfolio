@@ -91,7 +91,7 @@ export default function Article() {
     }, [id]);
 
     if (loading) {
-        return <main>Carregando artigo...</main>;
+        return <main className={blogStyles.carregando}>Carregando artigo...</main>;
     }
 
     if (error || !article) {
