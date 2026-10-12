@@ -31,7 +31,7 @@
 .article {
     position: relative;
     width: 100%;
-    min-height: 550px;
+    min-height: 700px;
     background-color: var(--background-color);
     cursor: pointer;
 }
@@ -113,7 +113,7 @@
 .header {
     width: 100%;
     position: relative;
-    height: 80vh;
+    height: 85vh;
     margin-bottom: var(--default-padding);
 }
 
