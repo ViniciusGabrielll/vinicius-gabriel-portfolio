@@ -4,6 +4,7 @@ import { getArticles } from "../services/api";
 
 import styles from "./Blog.module.css";
 import { LuSearch } from "react-icons/lu";
+import Coffee from "../components/Coffe";
 
 interface Article {
     id: number;
@@ -63,11 +64,45 @@ export default function Blog() {
     }, [articles]);
 
     if (loading) {
-        return <main className={styles.carregando}>Carregando artigos...</main>;
+        return (
+
+<main className={styles.loading}>
+                <span className={styles.loadingTitle}>Carregando artigos...</span>
+                <span className={styles.loadingTime}>Até 1 minuto</span>
+                <header className={styles.header}>
+                    <div
+                        className={styles.latestArticle}
+                    >
+                        <div
+                            className={styles.latestArticleImage}
+                        />
+
+                        <div className={styles.latestArticleContent}>
+
+                            <div>
+                                <h2>Título</h2>
+
+                                <p>Descrição</p>
+                            </div>
+
+                            <div className={styles.latestArticleInfo}>
+                                <span>
+                                    00/00/0000
+                                </span>
+
+                                <span>
+                                    0 min de leitura
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </main>
+        )
     }
 
     if (error) {
-        return <main className={styles.carregando}>{error}</main>;
+        return <main className={styles.loading}>{error}</main>;
     }
 
     const sortedArticles = [...articles].sort(
