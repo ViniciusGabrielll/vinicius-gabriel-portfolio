@@ -26,12 +26,13 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--default-padding);
+    margin-bottom: var(--default-padding);
 }
 
 .article {
     position: relative;
     width: 100%;
-    min-height: 700px;
+    min-height: 600px;
     background-color: var(--background-color);
     cursor: pointer;
 }
@@ -42,7 +43,7 @@
 }
 
 .articleContent {
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,7 +51,7 @@
 
 .articleImage {
     width: 100%;
-    height: 50%;
+    height: 40%;
     background-position: center;
     background-size: 100%;
     background-color: var(--secondary-text-color);
@@ -411,8 +412,7 @@
     }
 
     .header {
-        height: 55vh;
-        min-height: 350px;
+        min-height: 55vh;
         margin-bottom: 3rem;
     }
 
@@ -488,11 +488,6 @@
 @media (max-width: 480px) {
     .container {
         padding: 1rem;
-    }
-
-    .header {
-        height: 45vh;
-        min-height: 280px;
     }
 
     .articleContent {

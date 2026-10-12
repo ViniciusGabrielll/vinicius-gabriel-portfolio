@@ -8,6 +8,22 @@
     align-items: center;
 }
 
+.backBtn {
+    align-self: flex-start;
+    left: var(--default-padding);
+    top: var(--default-padding);
+    width: 50px;
+    height: 50px;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+}
+
+.backBtn:hover {
+    background-color: var(--secondary-text-color-light);
+}
 
 .backBtn svg {
     width: 25px;
@@ -111,24 +127,6 @@
 .content img {
     max-width: 100%;
     height: auto;
-}
-
-
-.backBtn {
-    position: absolute;
-    left: var(--default-padding);
-    top: var(--default-padding);
-    width: 50px;
-    height: 50px;
-    background-color: var(--background-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .2s ease-in-out;
-}
-
-.backBtn:hover {
-    background-color: var(--secondary-text-color-light);
 }
 
 .downloadBtn {
