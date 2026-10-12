@@ -4,7 +4,6 @@ import { getArticles } from "../services/api";
 
 import styles from "./Blog.module.css";
 import { LuSearch } from "react-icons/lu";
-import Coffee from "../components/Coffe";
 
 interface Article {
     id: number;
