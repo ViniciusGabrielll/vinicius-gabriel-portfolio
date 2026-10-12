@@ -8,22 +8,6 @@
     align-items: center;
 }
 
-.backBtn {
-    position: absolute;
-    left: var(--default-padding);
-    top: var(--default-padding);
-    width: 50px;
-    height: 50px;
-    background-color: var(--background-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .2s ease-in-out;
-}
-
-.backBtn:hover {
-    background-color: var(--secondary-text-color-light);
-}
 
 .backBtn svg {
     width: 25px;
@@ -77,12 +61,74 @@
 .articleContent {
     padding-top: var(--default-padding);
     padding-bottom: var(--default-padding);
-    width: 600px;
+    width: 700px;
     font-size: 1rem;
     white-space: pre-wrap;
     display: flex;
     flex-direction: column;
     gap: var(--default-padding);
+}
+
+
+.content h1 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.content h3 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.75rem;
+}
+
+.content p {
+    line-height: 1.8;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
+
+.content ul,
+.content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.content blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+.content pre {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.backBtn {
+    position: absolute;
+    left: var(--default-padding);
+    top: var(--default-padding);
+    width: 50px;
+    height: 50px;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+}
+
+.backBtn:hover {
+    background-color: var(--secondary-text-color-light);
 }
 
 .downloadBtn {
@@ -220,6 +266,7 @@
     .container {
         margin-top: 120px;
     }
+
     .articleImage {
         margin-top: 2rem;
         margin-bottom: 2rem;

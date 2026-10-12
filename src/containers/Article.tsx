@@ -5,6 +5,9 @@ import blogStyles from "./Blog.module.css";
 import styles from "./Article.module.css";
 import { LuArrowLeft, LuArrowUpRight, LuDownload } from "react-icons/lu";
 
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 interface ArticleData {
     id: number;
     title: string;
@@ -128,7 +131,11 @@ export default function Article() {
             />
 
             <div className={styles.articleContent}>
-                {article.content}
+                <article className={styles.content}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {article.content}
+                    </ReactMarkdown>
+                </article>
 
                 {article.fileUrl && (
                     <a
